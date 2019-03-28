@@ -1,6 +1,9 @@
 from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 import os
+import json
+# get this object
+from flask import Response
 
 app = Flask(__name__)
 api = Api(app)
@@ -58,10 +61,10 @@ user4 =  {
 class User(Resource):
     def get(self, name):
         if name == "all":
-            return [{"a":"1"},{"b":"2"}]
+            return Response(json.dumps([{"a":"1"},{"b":"2"}]),  mimetype='application/json')
         for user in users:
             if (name == user["name"]):
-                return user, 200
+                return Response(json.dumps(user), mimetype='application/json')
         return "User not found", 404
 
     def post(self, name):
@@ -92,7 +95,8 @@ class User(Resource):
             if (name == user["name"]):
                 user["age"] = args["age"]
                 user["occupation"] = args["occupation"]
-                return user, 200
+                ret = user
+                return Response(json.dumps(ret), mimetype='application/json'), 200
 
         user = {
             "name": name,
@@ -100,7 +104,8 @@ class User(Resource):
             "occupation": args["occupation"]
         }
         users.append(user)
-        return user, 201
+        ret = user
+        return Response(json.dumps(ret), mimetype='application/json'), 201
 
     def delete(self, name):
         global users
@@ -111,13 +116,15 @@ class User(Resource):
 class Recommendation(Resource):
     def get(self, name):
         if recommendations[name]:
-            return recommendations[name], 200
+            ret = recommendations[name]
+            return Response(json.dumps(ret), mimetype='application/json'), 200
         return "User not found", 404
 
 class Question(Resource):
     def get(self, name):
         if answers[name]:
-            return answers[name], 200
+            ret = answers[name]
+            return Response(json.dumps(ret), mimetype='application/json'), 200
         return "User not found", 404
 
     # def post(self, name):

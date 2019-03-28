@@ -10,17 +10,20 @@ users = [
     {
         "name": "Ronny",
         "age": 42,
-        "occupation": "Network Engineer"
+        "occupation": "Network Engineer",
+        "rating": 5
     },
     {
         "name": "Miri",
         "age": 32,
-        "occupation": "Doctor"
+        "occupation": "Doctor",
+        "rating": 3
     },
     {
         "name": "Noga",
         "age": 22,
-        "occupation": "Web Developer"
+        "occupation": "Web Developer",
+        "rating": 0
     }
 ]
 

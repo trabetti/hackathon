@@ -31,7 +31,8 @@ user1 = {
         "age": 42,
         "occupation": "Network Engineer",
         "rating":4.3,
-        "subjects":"build-wix-site,google-cloud"
+        "subjects":"build-wix-site,google-cloud",
+        "phone":"0548887371"
     }
 
 user2 = {
@@ -39,7 +40,8 @@ user2 = {
         "age": 32,
         "occupation": "solution architect",
         "rating":5.0,
-        "subjects":"google-cloud,write-cv"
+        "subjects":"google-cloud,write-cv",
+        "phone":"0542545499"
     }
 
 user3 = {
@@ -47,7 +49,8 @@ user3 = {
         "age": 22,
         "occupation": "Web Developer",
         "rating":3.4,
-        "subjects":"mobile-ux,write-cv"
+        "subjects":"mobile-ux,write-cv",
+        "phone":"0525640160"
     }
 
 user4 =  {
@@ -55,7 +58,8 @@ user4 =  {
         "age": 22,
         "occupation": "account-manager",
         "rating":3.4,
-        "subjects":"ad-tech,write-cv"
+        "subjects":"ad-tech,write-cv",
+        "phone":"05249107233"
     }
 
 class User(Resource):

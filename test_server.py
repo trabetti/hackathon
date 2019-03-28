@@ -57,6 +57,8 @@ user4 =  {
 
 class User(Resource):
     def get(self, name):
+        if name == "all":
+            return [{"a":"1"},{"b":"2"}]
         for user in users:
             if (name == user["name"]):
                 return user, 200
@@ -164,6 +166,7 @@ class Question(Resource):
 
 api.add_resource(User, "/user/<string:name>")
 api.add_resource(Question, "/question/<string:name>")
+api.add_resource(Recommendation, "/recommendation/<string:name>")
 
 if __name__ == '__main__':
     users = []

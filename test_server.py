@@ -96,12 +96,16 @@ class User(Resource):
     def get(self, index):
         # if index == "all":
         #     return Response(json.dumps([{"a":"1"},{"b":"2"}]),  mimetype='application/json')
-        iid = int(index)
-        user = users[iid]
-        return Response(json.dumps(user), mimetype='application/json')
-        #for user in users:
-        #    if (name == user["name"]):
-
+        user=None
+        try:
+            iid = int(index)
+            user = users[iid]
+        except ValueError as e:
+            for u in users:
+               if (index == u["name"]):
+                   user = u
+        if user:
+            return Response(json.dumps(user), mimetype='application/json')
         return "User not found", 404
 
     def post(self, name):

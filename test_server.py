@@ -32,7 +32,8 @@ user1 = {
         "occupation": "Network Engineer",
         "rating":4.3,
         "subjects":"build-wix-site,google-cloud",
-        "phone":"0548887371"
+        "phone":"0548887371",
+        "image":"mentor13.png"
     }
 
 user2 = {
@@ -41,7 +42,8 @@ user2 = {
         "occupation": "solution architect",
         "rating":5.0,
         "subjects":"google-cloud,write-cv",
-        "phone":"0542545499"
+        "phone":"0542545499",
+        "image":"mentor10.png"
     }
 
 user3 = {
@@ -50,25 +52,56 @@ user3 = {
         "occupation": "Web Developer",
         "rating":3.4,
         "subjects":"mobile-ux,write-cv",
-        "phone":"0525640160"
+        "phone":"0525640160",
+        "image":"mentor9.png"
     }
 
 user4 =  {
-        "name": "Alex",
-        "age": 22,
-        "occupation": "account-manager",
+        "name": "Ziv Ambar",
+        "occupation": "python developer",
         "rating":3.4,
         "subjects":"ad-tech,write-cv",
-        "phone":"05249107233"
+        "phone":"05249107233",
+        "image":"mentor11.png"
+    }
+
+user5 =  {
+        "name": "Tal Zavitan",
+        "occupation": "customer success",
+        "rating":3.4,
+        "subjects":"ad-tech,write-cv",
+        "phone":"05249107233",
+        "image":"mentor2.png"
+    }
+
+user6 =  {
+        "name": "Gonen Shelef",
+        "occupation": "biz dev",
+        "rating":3.4,
+        "subjects":"ad-tech,write-cv",
+        "phone":"05249107233",
+        "image":"mentor14.png"
+    }
+
+user7 =  {
+        "name": "Ran Adam",
+        "occupation": "IT",
+        "rating":3.4,
+        "subjects":"ad-tech,write-cv",
+        "phone":"05249107233",
+        "image":"mentor7.png"
     }
 
 class User(Resource):
-    def get(self, name):
-        if name == "all":
-            return Response(json.dumps([{"a":"1"},{"b":"2"}]),  mimetype='application/json')
-        for user in users:
-            if (name == user["name"]):
-                return Response(json.dumps(user), mimetype='application/json')
+    def get(self, index):
+        # if index == "all":
+        #     return Response(json.dumps([{"a":"1"},{"b":"2"}]),  mimetype='application/json')
+        iid = int(index)
+        user = users[iid]
+        return Response(json.dumps(user), mimetype='application/json')
+        #for user in users:
+        #    if (name == user["name"]):
+
         return "User not found", 404
 
     def post(self, name):
@@ -175,7 +208,7 @@ class Question(Resource):
     #     return "{} is deleted.".format(name), 200
 
 
-api.add_resource(User, "/user/<string:name>")
+api.add_resource(User, "/user/<string:index>")
 api.add_resource(Question, "/question/<string:name>")
 api.add_resource(Recommendation, "/recommendation/<string:name>")
 
@@ -185,6 +218,9 @@ if __name__ == '__main__':
     users.append(user2)
     users.append(user3)
     users.append(user4)
+    users.append(user5)
+    users.append(user6)
+    users.append(user7)
     answers = {}
     answers["roni"] = [user1,user2]
     recommendations = {}

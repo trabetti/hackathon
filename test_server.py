@@ -21,75 +21,82 @@ answers = [
         "name": "Miri",
         "age": 32,
         "occupation": "solution architect",
-        "rating":5.0,
+        "rating":150,
         "subjects":"google-cloud,write-cv"
     },
 ]
 
 user1 = {
-        "name": "roni",
+        "name": "Roni",
         "age": 42,
         "occupation": "Network Engineer",
-        "rating":4.3,
+        "rating":403,
         "subjects":"build-wix-site,google-cloud",
         "phone":"0548887371",
-        "image":"mentor13.png"
+    "reviews": "Roni has a lot of knowledge on networks and she is happy to share it.",
+    "image":"mentor13.png"
     }
 
 user2 = {
         "name": "Miri",
         "age": 32,
         "occupation": "solution architect",
-        "rating":5.0,
-        "subjects":"google-cloud,write-cv",
+        "rating":50,
+        "subjects":"google-cloud, write-cv",
         "phone":"0542545499",
-        "image":"mentor10.png"
+    "reviews": "Miri helped me write an awesome cv that helped me find a new job.",
+    "image":"mentor10.png"
     }
 
 user3 = {
-        "name": "Noga",
-        "age": 22,
-        "occupation": "Web Developer",
-        "rating":3.4,
-        "subjects":"mobile-ux,write-cv",
-        "phone":"0525640160",
-        "image":"mentor9.png"
-    }
+    "name": "Tal Zavitan",
+    "occupation": "customer success",
+    "rating": 776,
+    "subjects": "promotion, surfing",
+    "phone": "0549107233",
+    "reviews": "very helpful conversation, thanks!",
+    "image": "mentor2.png"
+}
 
 user4 =  {
         "name": "Ziv Ambar",
         "occupation": "python developer",
-        "rating":3.4,
-        "subjects":"ad-tech,write-cv",
-        "phone":"05249107233",
-        "image":"mentor11.png"
+        "rating":340,
+        "subjects":"python, write-cv",
+        "phone":"0548887371",
+    "reviews": "Ziv helped me write an awesome cv that helped me find a new job.",
+    "image":"mentor11.png"
     }
 
 user5 =  {
-        "name": "Tal Zavitan",
-        "occupation": "customer success",
-        "rating":3.4,
-        "subjects":"ad-tech,write-cv",
-        "phone":"05249107233",
-        "image":"mentor2.png"
+        "name": "Noga",
+        "age": 22,
+        "occupation": "Web Developer",
+        "rating":110,
+        "subjects":"mobile-ux, write-cv, html",
+        "phone":"0525640160",
+    "reviews": "Noga has a lot of knowledge in web development and she is happy to share it.",
+    "image":"mentor9.png"
     }
 
 user6 =  {
         "name": "Gonen Shelef",
         "occupation": "biz dev",
-        "rating":3.4,
-        "subjects":"ad-tech,write-cv",
-        "phone":"05249107233",
-        "image":"mentor14.png"
+        "rating":304,
+        "subjects":"ad-tech, bitcoin, hiking",
+        "phone":"0525640160",
+    "reviews": "very helpful conversation, thanks!",
+    "image":"mentor14.png"
     }
 
 user7 =  {
         "name": "Ran Adam",
         "occupation": "IT",
-        "rating":3.4,
-        "subjects":"ad-tech,write-cv",
-        "phone":"05249107233",
-        "image":"mentor7.png"
+        "rating":99,
+        "subjects":"cloud, devops",
+        "phone":"0549107233",
+    "reviews": "very helpful conversation, thanks!",
+    "image":"mentor7.png"
     }
 
 class User(Resource):
